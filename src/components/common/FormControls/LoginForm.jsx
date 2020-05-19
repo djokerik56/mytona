@@ -13,10 +13,12 @@ let LoginForm = (props) => {
             <Form.Group controlId='formBasicEmail'>
                 <Form.Label>Email address</Form.Label>
                 <Field component={Input} type='email' name='email' placeholder='email@mail.com' validate={[required, maxlenght30]}/>
+                <Form.Text>EMAIL: admin@mail.com</Form.Text>
             </Form.Group>
             <Form.Group controlId='formBasicPassword'>
                 <Form.Label>Password</Form.Label>
                 <Field component={Input} type='password' name='password' placeholder='Password' validate={[required, maxlenght15]}/>
+                <Form.Text>PASSWORD: admin</Form.Text>
             </Form.Group>
             <Form.Group controlId='formBasicCheck'>
                 <Field component={Checkbox} type='checkbox' name='rememberMe' label='remember me' />
