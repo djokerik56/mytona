@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.scss';
+import { Switch, Route } from 'react-router-dom';
+import AboutContainer from './components/Pages/About/AboutContainer'
+import HomeContainer from './components/Pages/Home/HomeContainer';
+import NewsContainer from './components/Pages/News/NewsContainer';
+import LoginContainer from './components/Login/LoginContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-wrapper'>
+      <HeaderContainer />
+      <main className="content">
+        <Switch>
+          <Route exact path='/' render={()=><HomeContainer/>} />
+          <Route path='/about' render={()=><AboutContainer/>} />
+          <Route path='/news' render={()=><NewsContainer/>} />
+          <Route path='/login' render={()=><LoginContainer/>} />
+        </Switch>
+      </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
